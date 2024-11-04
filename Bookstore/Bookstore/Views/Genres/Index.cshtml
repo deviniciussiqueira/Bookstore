@@ -1,4 +1,4 @@
-﻿@using Bookstore.Models;
+﻿@using Bookstore.Models
 @model IEnumerable<Genre>
 
 @{
@@ -11,27 +11,48 @@
 <a asp-action="Create">Adicionar novo Gênero Literário</a>
 </p>
 
-<table class="table">
+<table class="table table-hover">
 <thead>
 <tr>
 <th>@Html.DisplayNameFor(model => model.Name)</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
-        @foreach (Genre genre in Model)
-        {
+    @foreach (Genre genre in Model)
+    {
     <tr>
-    <td>
-                    @Html.DisplayFor(modelItem => genre.Name)
+        <td>
+            @Html.DisplayFor(modelItem => genre.Name)
     </td>
     <td>
-    <a asp-action="Details" asp-route-id="@genre.Id">Detalhes</a>
-    <a asp-action="Edit" asp-route-id="@genre.Id">Editar</a>
-    <a asp-action="Delete" asp-route-id="@genre.Id">Apagar</a>
-    </td>
+        <a 
+            type= "button"
+            tittle= "Detalhes"
+            class= "btn btn-outline-info px-2 py-1 rounded mx-1"
+            asp-action="Details"
+            asp-rout-id=" @genre.Id"
+        >
+            <i class= "bi bi-list-ul></i>
+        </a>
+        <a 
+            type="botton"
+            tittle="Editar"
+            class="btnn btn-outline-warning px-2 py-1 rounded mx-1" asp-action="Edit"
+            asp-rout-id="@genre.Id"
+        >
+            <i class="bi bi-pencil-fill"></i>
+        </a>
+         <a
+             type="button"
+             title="Excluir"
+             class="btn btn-outline-danger px-2 py-1 rounded mx-1"	
+             asp-action="Delete"
+              asp-route-id="@genre.Id">
+             <i class="bi bi-trash-fill"></i>
+        </a>     
+        </td>
     </tr>
-        }
+    }
 </tbody>
 </table>
-
-tem menu de contexto
