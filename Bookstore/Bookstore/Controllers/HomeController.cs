@@ -21,14 +21,6 @@ namespace Bookstore.Controllers
 
         }
 
-        public IActionResult Privacy()
-
-        {
-
-            return View();
-
-        }
-
         public IActionResult Error()
 
         {
